@@ -29,7 +29,7 @@ class Aggregate extends Component{
   render() {
     return (
       <div style={{'width' : '40%', 'display' : 'inline-block'}}>
-        <h3 style={{'color': 'green'}}>Number Text
+        <h3 style={{'color': 'green'}}>Number text
         </h3>
       </div>
     );

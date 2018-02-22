@@ -43,3 +43,8 @@
 .sc-list{
   padding: 0px !important;
 }
+
+.soundcard{
+  width: 25%;
+  display: inline-block;
+}

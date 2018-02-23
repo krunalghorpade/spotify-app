@@ -51,12 +51,11 @@ class Playlist extends Component{
     return (
       <div className="soundcard">
         <img/>
-        <h3>Playlist</h3>
+        <h3>{this.props.playlist.name}</h3>
         <ul className="sc-list">
-          <li>song</li>
-          <li>song</li>
-          <li>song</li>
-          <li>song</li>
+          {this.props.playlist.songs.map(
+            song => <li>{song.name}</li>
+            )}
         </ul>
 
       </div>
@@ -128,7 +127,7 @@ class App extends Component {
   }
 
   render() {
-  
+    
     return (
       <div className="App">
         {this.state.serverData.user ? 
@@ -141,11 +140,18 @@ class App extends Component {
           <HourCounter playlists={this.state.serverData.user.playlists}/>
          
           <Filter/>
-          <Playlist/>
-          <Playlist/>
-          <Playlist/>
-          <Playlist/>
-        </div> : <h1>Let it Load bitch....</h1>}
+          {this.state.serverData.user.playlists.map(playlist => 
+            <Playlist playlist={playlist}/>
+            )}
+
+
+
+
+
+
+
+        </div>
+        : <h1>Let it Load bitch....</h1>}
       </div>
     );
   }
